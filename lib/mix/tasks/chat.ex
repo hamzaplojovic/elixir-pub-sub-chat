@@ -19,7 +19,7 @@ defmodule Mix.Tasks.Chat do
 
   defp start_distributed(nickname) do
     node_name = :"#{nickname}@127.0.0.1"
-    Node.start(node_name, :shortnames)
+    Node.start(node_name, name_domain: :shortnames)
     Node.set_cookie(:pubsub_chat)
   end
 end
